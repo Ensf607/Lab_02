@@ -17,10 +17,18 @@ public void play() {
 		makeMove();
 		board.display();
 		if(board.xWins()) {
-			System.out.println("X player wins");
+			if(mark=='X')
+				System.out.println("Game over!! "+name+" wins");
+			else
+				System.out.println("Game over!! "+opponent.name+" wins");
+				
 			break;
 		}
 		else if (board.oWins()) {
+			if(mark=='O')
+				System.out.println("Game over!! "+name+" wins");
+			else
+				System.out.println("Game over!! "+opponent.name+" wins");
 			System.out.println("O player wins");
 			break;
 			
@@ -30,6 +38,7 @@ public void play() {
 			break;
 		}
 		opponent.play();
+		
 	}
 	
 	
@@ -40,7 +49,14 @@ public void makeMove() {
 	int row=scanner.nextInt();
 	System.out.println(name+", what column should your next"+mark+" be placed in ?");
 	int col =scanner.nextInt();
-	board.addMark(row, col, mark);
+	if (board.getMark(row, col)==' ') {
+		board.addMark(row, col, mark);
+	}
+	else {
+		System.err.println("There is a mark there, choose another location");
+		makeMove();
+	}
+	
 }
 public void setOpponent (Player opponent) {
 	this.opponent=opponent;
