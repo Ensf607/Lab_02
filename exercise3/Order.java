@@ -1,9 +1,9 @@
 package exercise3;
 
 public class Order {
-public int id;
-public String date;
-public String[] orderInfo;
+private int id;
+private String date;
+private String[] orderInfo;
 public Order( String date,String[] orderInfo) {
 	this.id= (int)Math.round(Math.random()*100000);
 	this.orderInfo=orderInfo;

@@ -1,11 +1,11 @@
 package exercise3;
 
 public class Tool {
-	public int id;
-	public String name;
-	public int quantity;
-	public double price;
-	public int supplierID;
+	private int id;
+	private String name;
+	private int quantity;
+	private double price;
+	private int supplierID;
 
 	public Tool(int id, String name, int quantity, double price, int supplierID) {
 		super();

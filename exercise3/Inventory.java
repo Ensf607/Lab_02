@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Inventory {
-public ArrayList<Tool>toolList;
-public HashMap<Integer,String> supplier;
+private ArrayList<Tool>toolList;
+private HashMap<Integer,String> supplier;
 
 public Inventory(HashMap<Integer,String> supplier)
 {	this.supplier=supplier;
